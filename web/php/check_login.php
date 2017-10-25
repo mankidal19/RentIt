@@ -21,38 +21,42 @@
         {
                 $sql="SELECT * FROM user WHERE email='$email' and password='$password'";
         }
-        else if($level=='Admin')
-        {
-                $sql="SELECT * FROM user WHERE email='$email' and password='$password' and level='admin'";
-        }
         // username and password sent from form
 
         $result=mysqli_query($conn,$sql) or trigger_error($conn->error."[$sql]");
         $count = mysqli_num_rows($result);
         $row = mysqli_fetch_array($result);
-        printf ($row["level"], $row["username"]);
+        $username= $row["username"];
+        $userID=$row['userID'];
+        $level=$row['level'];
 
-                if($count==1)
+        if($count==1)
+        {
+                $_SESSION["Login"] = "YES";
+                $_SESSION['USER'] = $username;
+                $_SESSION['LEVEL'] =$level;
+                $expire = time()+60*60*24*30;
+                setcookie("userID", $userID, $expire);
+                if($_SESSION["LEVEL"] == "admin")
                 {
-                        $_SESSION["Login"] = "YES";
-                        $_SESSION['USER'] = $username;
-                        $_SESSION['LEVEL'] =$level;
-                        $expire = time()+60*60*24*30;
-                        setcookie("userID", $userID, $expire);
-                        if($_SESSION["LEVEL"] == "admin"){
-                                header("Location: ../WEB-INF/index.html");
-                        }
-                    
-                        else if($_SESSION["LEVEL"] == "User"){
-                                header("Location: index.html");
-                        }
-                }           
-                else{
-                        $_SESSION["Login"] = "NO";
-                        echo "<h1>User are not found </h1>";
-                        echo "<p><a href='document.php'>Link to protected file</a></p>";
+                        header("Location: ../WEB-INF/admin.html");
+                }    
+                else if($_SESSION["LEVEL"] == "user")
+                {
+                        header("Location: ../WEB-INF/index.html");
                 }
-
+                else if($_SESSION["LEVEL"] == "RentalMaster")
+                {
+                        header("Location:../WEB-INF/rentalMaster.html");
+                }
+                
+         }           
+        else
+        {
+                $_SESSION["Login"] = "NO";
+                echo "<h1>User are not found </h1>";
+                echo "<p><a href='document.php'>Link to protected file</a></p>";
+        }
 ?>
 		 
 	  

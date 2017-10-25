@@ -6,7 +6,7 @@
 $sql = "CREATE TABLE rentalmaster
         (
 		userID int(11) NOT NULL AUTO_INCREMENT,
-		userName varchar(30) NOT NULL,
+		username varchar(30) NOT NULL,
  		firstName varchar(100) NOT NULL,
  		lastName varchar(100) NOT NULL,
  		jobPosition varchar(100) NOT NULL,
