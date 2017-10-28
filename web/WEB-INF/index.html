@@ -12,6 +12,7 @@ and open the template in the editor.
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="rentit_css.css">
+        <script type="text/javascript" src="formValidation.js"></script>
         
     </head>
 <body>
@@ -35,15 +36,15 @@ and open the template in the editor.
                     <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-info dropdown-toggle">Login <span class="caret"></span></button>
                     <ul class="dropdown-menu dropdown-menu-right mt-1">
                       <li class="p-3">
-                            <form class="form" role="form" action="">
+                            <form class="form" role="form" method="POST" action="../php/check_login.php" onsubmit="return validate();">
                                 <div class="form-group">
-                                    <input id="emailInput" placeholder="Email" class="form-control form-control-sm" type="text" required="">
+                                    <input id="emailInput" name="emailInput" placeholder="Email" class="form-control form-control-sm" type="text">
                                 </div>
                                 <div class="form-group">
-                                    <input id="passwordInput" placeholder="Password" class="form-control form-control-sm" type="text" required="">
+                                    <input id="passwordInput" name='passwordInput' placeholder="Password" class="form-control form-control-sm" type="password">
                                 </div>
                                 <div class="form-group">
-                                    <input type="radio" name="usertype" value="RentalMaster">Rental Master<br>
+                                    <input type="radio" name="usertype" value="RentalMaster" checked>Rental Master<br>
                                     <input type="radio" name="usertype" value="Customer"> Customer<br>
                                     <input type="radio" name="usertype" value="Admin"> Admin
                                 </div>
