@@ -23,7 +23,7 @@
 		    $password = $_POST['password'];
 		}
 
-	    $checkEmail = "select * from rentalmaster where cemail='.$cemail.'";
+	    $checkEmail = "select * from rentalmaster where cemail='$cemail'";
 	    $check = mysqli_query($conn,$checkEmail) or trigger_error($conn->error."[$checkEmail]");
 	    $existsEmail = mysqli_num_rows($check);
 	    if($existsEmail==1 || $existsEmail>1)

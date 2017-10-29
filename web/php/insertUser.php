@@ -1,29 +1,45 @@
-	<HTML>
-	<HEAD>
-	<TITLE>Form Handler for user_form</TITLE>
-	<link rel="stylesheet" type="text/css" href=""/>
-	</HEAD>
-	<BODY>
 
-	 <?php
-	    // $userName = $_POST["username"];
-	    // $password = $_POST["password"];
-	    // $email = $_POST["email"];
-	    // $telNo = $_POST["telNo"];
-	    // $level = 'user';
+<?php
+    include ("config.php");
+	$userName = $_POST['username'];
+	$gender = $_POST['gender'];
+	$date = $_POST['gender'];
+	$password = $_POST['password'];
+	$email = $_POST['EMail'];
+	$phone = $_POST['Phone'];
+	$level = 'user';
 
-	    include ("config.php");
+	$checkEmail = "select * from user where email='$email'";
+	$check = mysqli_query($conn,$checkEmail) or trigger_error($conn->error."[$checkEmail]");
+	$existsEmail = mysqli_num_rows($check);
+	if($existsEmail==1 || $existsEmail>1)
+	{
+	    ?>
+	    <html>
+	    <head>
+	    </head>
+	    <body onLoad="repeat();">
+	    	
+	    <script>
+	    	function repeat()
+	    	{
+	    		alert("User Message has used");
+	    	}
+	    </script>
+	    </body>
+	    </html>
 
-	    // $sql = "insert into user(username, password, email, telNo, level) values ('$userName','$password','$email','$telNo','$level')" ;
-	  	// $sql = "insert into user(username, password, email, telNo, level) values ('admin','123456','email','0123456789','admin')" ; insert admin
-	  	$sql = "insert into user(username, password, email, telNo, level) values ('user1','123456','email','0123456789','user')" ;
+		<?php
+	}
+	  	// $sql = "insert into user(username, gender, birthDate,password, email, phone, level) values ('admin','male','123','123456','email','0123456789','admin')" ; 
+	  	// $sql2 = "insert into user(username, gender, birthDate, password, email, phone, level) values ('user1','male','123','123456','email','0123456789','user')" ;
+	    // $result=mysqli_query($conn,$sql) or trigger_error($conn->error."[$sql]");
+	    // $result2=mysqli_query($conn,$sql2) or trigger_error($conn->error."[$sql]");
+	else
+	{
+	    $sql = "insert into user(username, gender,date, password, email, phone, level) values ('$userName','$gender','$date',$password','$email','$phone','$level')" ;
 	    $result=mysqli_query($conn,$sql) or trigger_error($conn->error."[$sql]");
+	}
 
 	    mysqli_close($conn);
-	 ?>
-<!-- 	 if success direct to other page
- -->
-
-
-	</BODY>
-	</HTML>
+?>
