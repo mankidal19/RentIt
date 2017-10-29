@@ -2,7 +2,7 @@
         // Start up your PHP Session
         session_start();
         include('config.php');
-        if(isset($_POST['emailInput']) && $_POST['emailInput'])
+        if(isset($_POST['emailInput']) && $_POST['passwordInput'])
         {
                 $email=$_POST['emailInput'];
                 $password=$_POST['passwordInput'];
@@ -15,7 +15,7 @@
 
         if($level=="RentalMaster")
         {
-                $sql="SELECT * FROM rentalmaster WHERE email='$email' and password='$password'";
+                $sql="SELECT * FROM rentalmaster WHERE cemail='$email' and password='$password'";
         }
         else if($level=="Customer")
         {
@@ -55,7 +55,7 @@
         {
                 $_SESSION["Login"] = "NO";
                 echo "<h1>User are not found </h1>";
-                echo "<p><a href='document.php'>Link to protected file</a></p>";
+                
         }
 ?>
 		 

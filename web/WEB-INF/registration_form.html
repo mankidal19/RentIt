@@ -171,7 +171,7 @@ and open the template in the editor.
                 <button type="submit" id='registerButton_div1' class="btn btn-default">Register</button>
             </form>
            
-             <form name='rentalMaster' id='div2' action='' class="hide">
+             <form name='rentalMaster' id='div2' method='POST' action='../php/insertRentalMaster.php' onsubmit="return validateRegisterRentalMaster()" class="hide">
                  
                 <h2>Register as Rental Master</h2>
                 <h3>Company Information</h3>
@@ -218,14 +218,14 @@ and open the template in the editor.
                 <div class='form-group'>
                 <p>
                      <label for='EMail' style='color:red;'>* Company E-mail:</label>
-                     <input type="text" id="EMail" name="EMail" class='form-control' placeholder="rentacar@mail.com" required autofocus/>
+                     <input type="text" id="CEMail" name="CEMail" class='form-control' placeholder="rentacar@mail.com" required autofocus/>
                 </p>
                 </div>
                 
                 <div class='form-group'>
                 <p>
                      <label for='Phone' style='color:red;'>* Company Contact Number:</label>
-                     <input type="text" id="Phone" name="Phone" class='form-control' placeholder="0123456789" required autofocus/>
+                     <input type="text" id="CPhone" name="CPhone" class='form-control' placeholder="0123456789" required autofocus/>
                 </p>
                 </div>
                 
