@@ -39,15 +39,15 @@
                 setcookie("userID", $userID, $expire);
                 if($_SESSION["LEVEL"] == "admin")
                 {
-                        header("Location: ../WEB-INF/admin.html");
+                        header("Location: ../WEB-INF/admin-main.html");
                 }    
                 else if($_SESSION["LEVEL"] == "user")
                 {
-                        header("Location: ../WEB-INF/index.html");
+                        header("Location: ../WEB-INF/cust-main.html");
                 }
                 else if($_SESSION["LEVEL"] == "RentalMaster")
                 {
-                        header("Location:../WEB-INF/rentalMaster.html");
+                        header("Location:../WEB-INF/rentalMaster-main.html");
                 }
                 
          }           
