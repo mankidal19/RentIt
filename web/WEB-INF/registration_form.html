@@ -81,69 +81,37 @@ and open the template in the editor.
             <form name='customer' id='div1' action='' class="hide">
                 <h2>Register as Customer</h2>
                 <h3>User Information</h3>
-                <div class='form-group'>
-                <p>
-                     <label for='title' style='color:red;'>* Title:</label>
-                     <select id="title" name="title" class='form-control'>
-                        <option selected>Please select one </option>
-                        <option value="Mr">Mr</option>
-                        <option value="Mrs">Mrs</option>
-                        <option value="Ms">Ms</option>
-                        <option value="Miss">Miss</option>
-                        <option value="Mrs">Mrs</option>
-                        <option value="Sir">Sir</option>
-                        <option value="Madam">Madam</option>
-                        <option value="Dr">Dr</option>
-                        <option value="Dato">Dato</option>
-                        <option value="Datuk">Datuk</option>
-                        <option value="Datin">Datin</option>
-                        <option value="Professor">Professor</option>
-                
-                    </select>
-                </p>
-                </div>
+               
                 
                 <div class='form-group'>
                 <p>
-                     <label for='firstName' style='color:red;'>* First Name:</label>
-                     <input type="text" id="firstName" name="firstName" class='form-control' placeholder="John" required autofocus/>
+                     <label for='EMail' style='color:red;'>* E-mail:</label>
+                     <input type="text" id="EMail_div1" name="EMail_div1" class='form-control' placeholder="johndoe@mail.com" required autofocus/>
                 </p>
                 </div>
                 
-                <div class='form-group'>
-                <p>
-                     <label for='lastName' style='color:red;'>* Last Name:</label>
-                     <input type="text" id="lastName" name="lastName" class='form-control' placeholder="Doe" required autofocus/>
-                </p>
-                </div>
                 
                 
                 <div class='form-group'>
                 <p>
                     <label for='gender' style='color:red;'>* Gender:</label>
-                    <input type="radio" name="gender" id='gender' value="Male" class='form-control' default>Male<br>
-                    <input type="radio" name="gender" id='gender' value="Female" class='form-control'>Female<br>
+                    <input type="radio" name="gender_div1" id='gender_div1' value="Male" class='form-control' default>Male<br>
+                    <input type="radio" name="gender_div1" id='gender_div1' value="Female" class='form-control'>Female<br>
                 </p>
                 </div>
                 
                 <div class='form-group'>
                 <p>
                      <label for='birthDate' style='color:red;'>* Date of Birth:</label>
-                     <input type="date" id="birthDate" name="birthDate" class='form-control' required autofocus/>
+                     <input type="date" id="birthDate_div1" name="birthDate_div1" class='form-control' required autofocus/>
                 </p>
                 </div>
                 
-                <div class='form-group'>
-                <p>
-                     <label for='EMail' style='color:red;'>* E-mail:</label>
-                     <input type="text" id="EMail" name="EMail" class='form-control' placeholder="johndoe@mail.com" required autofocus/>
-                </p>
-                </div>
                 
                 <div class='form-group'>
                 <p>
                      <label for='Phone'>Contact Number:</label>
-                     <input type="text" id="Phone" name="Phone" class='form-control' placeholder="0123456789" required autofocus/>
+                     <input type="text" id="Phone_div1" name="Phone_div1" class='form-control' placeholder="0123456789" required autofocus/>
                 </p>
                 </div>
                 
@@ -151,14 +119,14 @@ and open the template in the editor.
                 <div class='form-group'>
                 <p>
                      <label for='password'>Password</label>
-                     <input type="password" id="password_div1" name="password" class='form-control' required autofocus onkeyup='check();'/>
+                     <input type="password" id="password_div1" name="password_div1" class='form-control' required autofocus onkeyup='check();'/>
                 </p>
                 </div>
                 
                 <div class='form-group'>
                 <p>
                      <label for='confirm_password'>Re-enter Password</label>
-                     <input type="password" id="confirm_password_div1" name="confirm_password" class='form-control' required autofocus onkeyup='check();'/>
+                     <input type="password" id="confirm_password_div1" name="confirm_password_div1" class='form-control' required autofocus onkeyup='check();'/>
                      <label id="message_div1"></label>
                 </p>
                 </div>
@@ -168,17 +136,17 @@ and open the template in the editor.
                 <br><br><div class='checkbox'>
                     <input type='checkbox' name='agree' value='yes' checked class='form-control'><center>I agree to the terms of service.</center>
                 <br><br></div>
-                <button type="submit" id='registerButton_div1' class="btn btn-default">Register</button>
+                <center><button type="submit" id='registerButton_div1' class="btn btn-default">Register</button></center>
             </form>
            
-             <form name='rentalMaster' id='div2' method='POST' action='../php/insertRentalMaster.php' onsubmit="return validateRegisterRentalMaster()" class="hide">
+             <form name='rentalMaster' id='div2' action='' class="hide">
                  
                 <h2>Register as Rental Master</h2>
                 <h3>Company Information</h3>
                 <div class='form-group'>
                 <p>
                      <label for='companyName' style='color:red;'>* Company Name:</label>
-                     <input type="text" id="companyName" name="companyName" class='form-control' placeholder="Car Rental SDN BHD" required autofocus/>
+                     <input type="text" id="companyName_div2" name="companyName_div2" class='form-control' placeholder="Car Rental SDN BHD" required autofocus/>
                 </p>
                 </div>
                 
@@ -186,29 +154,29 @@ and open the template in the editor.
                 <div class='form-group'>
                 <p>
                      <label for='establishDate' style='color:red;'>* Date of Establishment:</label>
-                     <input type="date" id="establishDate" name="establishDate" class='form-control' required autofocus/>
+                     <input type="date" id="establishDate_div2" name="establishDate_div2" class='form-control' required autofocus/>
                 </p>
                 </div>
                 
                 <div class='form-group'>
                 <p>
                      <label for='address1' style='color:red;'>Address (line 1):</label>
-                     <input type="text" id="address1" name="address1" class='form-control' placeholder="123, Street ABC" required autofocus/>
+                     <input type="text" id="address1_div2" name="address1_div2" class='form-control' placeholder="123, Street ABC" required autofocus/>
                      
                      <label for='address2'>Address (line 2):</label>
-                     <input type="text" id="address2" name="address2" class='form-control' placeholder="off Petaling Street"/>
+                     <input type="text" id="address2_div2" name="address2_div2" class='form-control' placeholder="off Petaling Street"/>
                      
                      <label for='postcode' style='color:red;'>* Postcode</label>
-                     <input type="text" id="postcode" name="postcode" class='form-control' placeholder="08100" required autofocus/>
+                     <input type="text" id="postcode_div2" name="postcode_div2" class='form-control' placeholder="08100" required autofocus/>
                      
-                     <input type="hidden" name="country" id="countryId" value="MY"/>
+                     <input type="hidden" name="country_div2" id="countryId_div2" value="MY"/>
                      <label for='state' style='color:red;'>* State</label>
                        <select name="state" class="states order-alpha form-control" id="stateId" required autofocus>
                         <option value="">Select State</option>
                        </select>
                      
                      <label for='city' style='color:red;'>* City</label>
-                       <select name="city" class="cities order-alpha form-control" id="cityId" required autofocus>
+                       <select name="city_div2" class="cities order-alpha form-control" id="cityId_div2" required autofocus>
                          <option value="">Select City</option>
                     </select>
                     
@@ -218,14 +186,14 @@ and open the template in the editor.
                 <div class='form-group'>
                 <p>
                      <label for='EMail' style='color:red;'>* Company E-mail:</label>
-                     <input type="text" id="CEMail" name="CEMail" class='form-control' placeholder="rentacar@mail.com" required autofocus/>
+                     <input type="text" id="EMail_div2" name="EMail_div2" class='form-control' placeholder="rentacar@mail.com" required autofocus/>
                 </p>
                 </div>
                 
                 <div class='form-group'>
                 <p>
                      <label for='Phone' style='color:red;'>* Company Contact Number:</label>
-                     <input type="text" id="CPhone" name="CPhone" class='form-control' placeholder="0123456789" required autofocus/>
+                     <input type="text" id="Phone_div2" name="Phone_div2" class='form-control' placeholder="0123456789" required autofocus/>
                 </p>
                 </div>
                 
@@ -233,7 +201,7 @@ and open the template in the editor.
                 <div class='form-group'>
                 <p>
                      <label for='title' style='color:red;'>* Title:</label>
-                     <select id="title" name="title" class='form-control'>
+                     <select id="title_div2" name="title_div2" class='form-control'>
                         <option selected>Please select one </option>
                         <option value="Mr">Mr</option>
                         <option value="Mrs">Mrs</option>
@@ -255,43 +223,43 @@ and open the template in the editor.
                 <div class='form-group'>
                 <p>
                      <label for='firstName' style='color:red;'>* First Name:</label>
-                     <input type="text" id="firstName" name="firstName" class='form-control' placeholder="John" required autofocus/>
+                     <input type="text" id="firstName_div2" name="firstName_div2" class='form-control' placeholder="John" required autofocus/>
                 </p>
                 </div>
                 
                 <div class='form-group'>
                 <p>
                      <label for='lastName' style='color:red;'>* Last Name:</label>
-                     <input type="text" id="lastName" name="lastName" class='form-control' placeholder="Doe" required autofocus/>
+                     <input type="text" id="lastName_div2" name="lastName_div2" class='form-control' placeholder="Doe" required autofocus/>
                 </p>
                 </div>
                 
                 <div class='form-group'>
                 <p>
                     <label for='gender' style='color:red;'>* Gender:</label>
-                    <input type="radio" name="gender" id='gender' value="Male" class='form-control' default>Male<br>
-                    <input type="radio" name="gender" id='gender' value="Female" class='form-control'>Female<br>
+                    <input type="radio" name="gender_div2" id='gender_div2' value="Male" class='form-control' checked>Male<br>
+                    <input type="radio" name="gender_div2" id='gender_div2' value="Female" class='form-control'>Female<br>
                 </p>
                 </div>
                 
                 <div class='form-group'>
                 <p>
                      <label for='position' style='color:red;'>* Position:</label>
-                     <input type="text" id="position" name="position" class='form-control' placeholder="Marketing Officer" required autofocus/>
+                     <input type="text" id="position_div2" name="position_div2" class='form-control' placeholder="Marketing Officer" required autofocus/>
                 </p>
                 </div>
                 
                 <div class='form-group'>
                 <p>
                      <label for='EMail' style='color:red;'>* E-mail:</label>
-                     <input type="text" id="EMail" name="EMail" class='form-control' placeholder="johndoe@mail.com" required autofocus/>
+                     <input type="text" id="privateEMail_div2" name="privateEMail_div2" class='form-control' placeholder="johndoe@mail.com" required autofocus/>
                 </p>
                 </div>
                 
                 <div class='form-group'>
                 <p>
                      <label for='Phone'>Contact Number:</label>
-                     <input type="text" id="Phone" name="Phone" class='form-control' placeholder="0123456789" required autofocus/>
+                     <input type="text" id="privatePhone_div2" name="privatePhone_div2" class='form-control' placeholder="0123456789" required autofocus/>
                 </p>
                 </div>
                 
@@ -299,14 +267,14 @@ and open the template in the editor.
                 <div class='form-group'>
                 <p>
                      <label for='password'>Password</label>
-                     <input type="password" id="password_div2" name="password" class='form-control' required autofocus onkeyup='check();'/>
+                     <input type="password" id="password_div2" name="password_div2" class='form-control' required autofocus onkeyup='check();'/>
                 </p>
                 </div>
                 
                 <div class='form-group'>
                 <p>
                      <label for='confirm_password'>Re-enter Password</label>
-                     <input type="password" id="confirm_password_div2" name="confirm_password" class='form-control' required autofocus onkeyup='check();'/>
+                     <input type="password" id="confirm_password_div2" name="confirm_password_div2" class='form-control' required autofocus onkeyup='check();'/>
                      <label id="message_div2"></label>
                 </p>
                 </div>
@@ -316,7 +284,7 @@ and open the template in the editor.
                 <br><br><div class='checkbox'>
                     <input type='checkbox' name='agree' value='yes' checked class='form-control'><center>I agree to the terms of service.</center>
                 <br><br></div>
-                <button type="submit" id='registerButton_div2' class="btn btn-default">Register</button>
+                <center><button type="submit" id='registerButton_div2' class="btn btn-default">Register</button></center>
             </form>
            
             
