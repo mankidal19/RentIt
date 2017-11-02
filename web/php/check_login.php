@@ -1,3 +1,10 @@
+<script>
+    function failed()
+    {
+        alert("Login failed due to incorrect password or email");
+         window.location.replace("../WEB-INF/index.html");
+    }
+</script>
 <?php 
         // Start up your PHP Session
         session_start();
@@ -21,6 +28,10 @@
         {
                 $sql="SELECT * FROM user WHERE email='$email' and password='$password'";
         }
+        else if($level=="Admin")
+        {
+                $sql="SELECT * FROM user WHERE email='$email' and password='$password'";
+        }
         // username and password sent from form
 
         $result=mysqli_query($conn,$sql) or trigger_error($conn->error."[$sql]");
@@ -39,23 +50,24 @@
                 setcookie("userID", $userID, $expire);
                 if($_SESSION["LEVEL"] == "admin")
                 {
-                        header("Location: ../WEB-INF/admin.html");
+                        header("Location: ../WEB-INF/admin-main.html");
                 }    
                 else if($_SESSION["LEVEL"] == "user")
                 {
-                        header("Location: ../WEB-INF/index.html");
+                        header("Location: ../WEB-INF/cust-main.html");
                 }
                 else if($_SESSION["LEVEL"] == "RentalMaster")
                 {
-                        header("Location:../WEB-INF/rentalMaster.html");
+                        header("Location:../WEB-INF/rentalMaster-main.html");
                 }
                 
          }           
         else
         {
-                $_SESSION["Login"] = "NO";
-                echo "<h1>User are not found </h1>";
-                
+            $_SESSION["Login"] = "NO";
+            ?>
+            <script>window.onload=failed()</script>
+            <?php
         }
 ?>
 		 

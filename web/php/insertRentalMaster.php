@@ -6,6 +6,12 @@
 	    	{
 	    		alert("Company Email or User Email has used");
 	    	}
+	    	function success()
+	    	{
+	    		alert("Register Success");
+	    		 window.location.replace("../WEB-INF/index.html");
+	    	}
+	    </script>
 			<?php
 				include('config.php');
 				
@@ -37,21 +43,22 @@
 			    if($existsEmail==1 || $existsEmail>1)
 			    {
 			    	?>
-			    	window.onload=repeat;
+			    	<script>window.onload=repeat;</script>
 			    	<?php
 			    }
 			    else
 			    {
 			    	$sql = "insert into rentalmaster(username,firstName,lastName, password, email, address1, address2, postcode, country, phone, state, city, cemail, cphone, title, gender, position, establishDate) values('$username','$firstName','$lastName', '$password', '$email', '$address1', '$address2', '$postcode', '$country', '$phone', '$state', '$city', '$cemail', '$cphone', '$title', '$gender', '$position', '$establishDate')";
 			    	$result=mysqli_query($conn,$sql) or trigger_error($conn->error."[$sql]");
+			    	if($result)
+			    	{
+			    		?>
+			    		<script>window.onload=success()</script>
+			    		<?php
+			    	}
 			    }
-
-
-		            // $sql = "insert into rentalmaster(username,firstName,lastName, password, email,address1, address2, postcode,country,phone,state,city,cemail,cphone,title,gender,position,establishDate) values('test','first','last','12345678','rentalmaster@gmail.com','address1','address2','postcode','country','0123546789','state','city','cemail','0123456789','title','gender','position','2017-10-29')";
-
 
 			    mysqli_close($conn);
 			 ?>
-		</script>
 	</body>
 </html>

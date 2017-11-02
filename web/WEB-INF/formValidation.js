@@ -1,4 +1,4 @@
-*
+
 function validateLogin(){
 	var password = document.getElementById("passwordInput");
 	var email = document.getElementById("emailInput");
@@ -170,4 +170,54 @@ function validateRegisterRentalMaster(){
 	// 	return false
 	// }
 
+}
+
+
+//to change form based on dropdown menu
+function handleSelection(choice) {
+    document.getElementById('usertype').disabled=true;
+    document.getElementById(choice).style.display="block";
+}
+
+//check password matching
+var check = function() {
+    var div = document.getElementById('usertype').value;
+    var pwd = 'password_' + div;
+    var confirm_pwd = 'confirm_password_' + div;
+    
+  if (document.getElementById(pwd).value ==
+    document.getElementById(confirm_pwd).value) {
+    
+    if(document.getElementById('usertype').value.equals('div1')){
+        
+        document.getElementById('registerButton1').disabled = false;
+        document.getElementById('message1').style.color = 'green';
+        document.getElementById('message1').innerHTML = 'matching';
+    }
+    
+    else if(document.getElementById('usertype').value.equals('div2')){
+        
+        document.getElementById('registerButton2').disabled = false;
+        document.getElementById('message2').style.color = 'green';
+        document.getElementById('message2').innerHTML = 'matching';
+    }
+    
+  } else {
+    
+    if(document.getElementById('usertype').value.equals('div1')){
+        
+        document.getElementById('registerButton1').disabled = true;
+        document.getElementById('message1').style.color = 'red';
+        document.getElementById('message1').innerHTML = 'not matching';
+    }
+    
+    else if(document.getElementById('usertype').value.equals('div2')){
+        
+        document.getElementById('registerButton2').disabled = true;
+        document.getElementById('message2').style.color = 'red';
+        document.getElementById('message2').innerHTML = 'not matching';
+    }
+  }
+  
+  
 }

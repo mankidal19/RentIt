@@ -25,6 +25,8 @@ $sql = "CREATE TABLE rentalmaster
  		position varchar(20) NOT NULL,
  		establishDate date NOT NULL,
  		level varchar(15) NOT NULL default'RentalMaster',
+ 		valid int(4) NOT NULL default '1',
+ 		token varchar(40),
 		PRIMARY KEY (userID)
         )AUTO_INCREMENT=20000";
 
