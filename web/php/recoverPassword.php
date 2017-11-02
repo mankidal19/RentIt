@@ -1,5 +1,6 @@
 <?php
 	include(config.php);
+	$email=$_post['email'];
 	function checkRentalMaster($email)
 	{
 		$query=("Select * from rentalmaster where cemail='$email");
