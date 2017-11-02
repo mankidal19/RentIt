@@ -21,15 +21,7 @@
 					function repeat()
 					{
 						alert("User Email has register");
-						 window.location.replace("../WEB-INF/registration_form.html");;
-					}
-					function success()
-					{
-						alert("Register Success");
-					}
-					function failed()
-					{
-						alert("Register Failed");
+						window.location.replace("../WEB-INF/registration_form.html");;
 					}
 				    window.onLoad=repeat();
 				 </script>	
@@ -42,13 +34,27 @@
 			    if($result)
 			    {
 			    	?>
-			    	<script>window.onload=success();</script>
+			    	<script>
+			    		function success()
+						{
+							alert("Register Success");
+							window.location.replace("../WEB-INF/index.html");;
+						}
+			    		window.onload=success();
+			   		</script>
 			    	<?php
 			    }
 			    else
 			    {
 			    	?>
-			    	<script>window.onload=failed();</script>
+			    	<script>
+			    		function failed()
+						{
+							alert("Register Failed");
+							window.location.replace("../WEB-INF/registration_form.html");;
+						}
+						window.onload=failed();
+			    	</script>
 			    	<?php
 			    }
 			}

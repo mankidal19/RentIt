@@ -35,7 +35,7 @@ and open the template in the editor.
                     <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-info dropdown-toggle">Login <span class="caret"></span></button>
                     <ul class="dropdown-menu dropdown-menu-right mt-1">
                       <li class="p-3">
-                            <form class="form" role="form" method="POST" action="../php/check_login.php" onsubmit="return validate();">
+                            <form class="form" role="form" method="POST" action="../php/check_login.php" onsubmit="return validateLogin();">
                                 <div class="form-group">
                                     <input id="emailInput" name="emailInput" placeholder="Email" class="form-control form-control-sm" type="text">
                                 </div>
@@ -78,7 +78,7 @@ and open the template in the editor.
         </div>
         <div class='container-fluid' style="background-color:#66ccff;">
             
-            <form name='customer' id='div1' action='../php/insertUser.php' method='POST' class="hide">
+            <form name='customer' id='div1' action='../php/insertUser.php' method='POST' class="hide" onsubmit="return validateRegisterUser();">
                 <h2>Register as Customer</h2>
                 <h3>User Information</h3>
                
@@ -139,7 +139,7 @@ and open the template in the editor.
                 <center><button type="submit" id='registerButton_div1' class="btn btn-default">Register</button></center>
             </form>
            
-             <form name='rentalMaster' id='div2' action='../php/insertRentalMaster' method='POST' class="hide">
+             <form name='rentalMaster' id='div2' action='../php/insertRentalMaster' method='POST' class="hide" onsubmit="return validateRegisterRentalMaster();">
                  
                 <h2>Register as Rental Master</h2>
                 <h3>Company Information</h3>
@@ -215,7 +215,6 @@ and open the template in the editor.
                         <option value="Datuk">Datuk</option>
                         <option value="Datin">Datin</option>
                         <option value="Professor">Professor</option>
-                
                     </select>
                 </p>
                 </div>

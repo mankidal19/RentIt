@@ -2,8 +2,8 @@
 function validateLogin(){
 	var password = document.getElementById("passwordInput");
 	var email = document.getElementById("emailInput");
-	var atpos = emailInput.value.indexOf("@");
-	var dotpos = emailInput.value.lastIndexOf(".");
+	var atpos = email.value.indexOf("@");
+	var dotpos = email.value.lastIndexOf(".");
 	// var userType = document.getElementByName("usertype");
 	// var isChecked = false;
 
@@ -13,9 +13,9 @@ function validateLogin(){
 		email.focus();
 		return false;	
 	}
-	if (password.value==""|| password.length<6 ||length>12) 
+	if (password.value==""|| password.length<8 ||length>20) 
 	{
-		alert('Please enter a password length between 6-12');
+		alert('Please enter a password length between 8-20');
 		password.focus();
 		return false;
 	}
@@ -23,153 +23,81 @@ function validateLogin(){
 	return true;
 }
 
-function validateRegisterRentalMaster(){
-	// var companyName = document.getElementById("companyName");
-	// var establishDate = document.getElementById("establishDate");
-	// var address1 = document.getElementById("address1");
-	// var address2 = document.getElementById("address2");
-	// var postcode = document.getElementById("postcode");
-	// var country = document.getElementById("countryId");
-	// var state = document.getElementById("stateId");
-	// var city = document.getElementById("cityId");
-	// var Cemail = document.getElementById("CEMail");
-	// var Cphone = document.getElementById("CPhone");
-	// var title = document.getElementById("title");
-	// var firstName = document.getElementById("firstName");
-	// var lastName = document.getElementById("lastName");
-	// var gender = document.getElementById("gender");
-	// var position = document.getElementById("position");
-	// var email= document.getElementById("EMail");
-	// var password = document.getElementById("password_div2");
-	// var rPassword = document.getElementById("confirm_password_div2");
+function validateRegisterRentalMaster()
+{
+	var companyEmail = document.getElementById("EMail_div2");
+	var email= document.getElementById("privateEMail_div2");
+	var password = document.getElementById("password_div2");
+	var rPassword = document.getElementById("confirm_password_div2");
+	var atpos1 = email.value.indexOf("@");
+	var dotpos1 = email.value.lastIndexOf(".");
+	var atpos2 = companyEmail.value.indexOf("@");
+	var dotpos2 = companyEmail.value.lastIndexOf(".");
+	var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;  
+	if (atpos1 < 1 || ( dotpos1 - atpos1 < 2))
+	{
+		alert("Please enter a valid private email");
+		email.focus();
+		return false;	
+	}
+	if (atpos2 < 1 || ( dotpos2 - atpos2 < 2))
+	{
+		alert("Please enter a valid company email");
+		companuEmail.focus();
+		return false;	
+	}
+	if (password.value==""|| password.length<8 ||length>20) 
+	{
+		alert('Please enter a password length between 8-20');
+		password.focus();
+		return false;
+	}
+	if(!password.value.match(passw))
+	{
+		alert('Please contain at least one numeric digit, one uppercase and one lowercase letter');
+		password.focus();
+		return false;
+	}
+	if(password.value!=rPassword.value)
+	{
+		alert('Enter password are different');
+		password.focus();
+		return false;
+	}
+}
 
-	// if (companyName=="")
-	// {
-	// 	alert("Please complete the form");
-	// 	companyName.focus();
-	// 	return false;
-	// }
-	// if (establishDate=="")
-	// {
-	// 	alert("Please complete the form");
-	// 	establishDate.focus();
-	// 	return false;
-	// }
-	// if (address1=="")
-	// {
-	// 	alert("Please complete the form");
-	// 	address1.focus();
-	// 	return false;
-	// }
-	// if (address2=="")
-	// {
-	// 	alert("Please complete the form");
-	// 	address2.focus();
-	// 	return false;
-	// }
-	// if (postCode=="")
-	// {
-	// 	alert("Please complete the form");
-	// 	companyName.focus();
-	// 	return false;
-	// }
-	// if (countryId=="")
-	// {
-	// 	alert("Please complete the form");
-	// 	countryId.focus();
-	// 	return false;
-	// }
-	// if (state=="")
-	// {
-	// 	alert("Please complete the form");
-	// 	state.focus();
-	// 	return false;
-	// }
-	// if (city=="")
-	// {
-	// 	alert("Please complete the form");
-	// 	city.focus();
-	// 	return false;
-	// }
-	// if (Cemail=="")
-	// {
-	// 	alert("Please complete the form");
-	// 	Cemail.focus();
-	// 	return false;
-	// }
-	// if (Cphone=="")
-	// {
-	// 	alert("Please complete the form");
-	// 	Cphone.focus();
-	// 	return false;
-	// }
-	// if (postCode=="")
-	// {
-	// 	alert("Please complete the form");
-	// 	companyName.focus();
-	// 	return false;
-	// }
-	// if (title=="")
-	// {
-	// 	alert("Please complete the form");
-	// 	title.focus();
-	// 	return false;
-	// }
-	// if (firstName=="")
-	// {
-	// 	alert("Please complete the form");
-	// 	firstName.focus();
-	// 	return false;
-	// }
-	// if (lastName=="")
-	// {
-	// 	alert("Please complete the form");
-	// 	lastName.focus();
-	// 	return false;
-	// }
-	// if (gender=="")
-	// {
-	// 	alert("Please complete the form");
-	// 	gender.focus();
-	// 	return false;
-	// }
-	// if (position=="")
-	// {
-	// 	alert("Please complete the form");
-	// 	position.focus();
-	// 	return false;
-	// }
-	// if (email=="")
-	// {
-	// 	alert("Please complete the form");
-	// 	email.focus();
-	// 	return false;
-	// }
-	// if (phone=="")
-	// {
-	// 	alert("Please complete the form");
-	// 	phone.focus();
-	// 	return false;
-	// }
-	// if (password==""||password.length<8||password.length>15)
-	// {
-	// 	alert("Please enter password with length 8 - 15");
-	// 	password.focus();
-	// 	return false;
-	// }
-	// if (rPassword=="")
-	// {
-	// 	alert("Please complete the form");
-	// 	rPassword.focus();
-	// 	return false;
-	// }
-	// if(password != rPassword)
-	// {
-	// 	alert("Password Confirmation Incorrect");
-	// 	rPassword.focus();
-	// 	return false
-	// }
-
+function validateRegisterUser()
+{
+	var email= document.getElementById("EMail_div1");
+	var password = document.getElementById("password_div1");
+	var rPassword = document.getElementById("confirm_password_div1");
+	var atpos = email.value.indexOf("@");
+	var dotpos = email.value.lastIndexOf(".");;
+	var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;  
+	if (atpos < 1 || ( dotpos - atpos < 2))
+	{
+		alert("Please enter a valid email");
+		email.focus();
+		return false;	
+	}
+	if (password.value==""|| password.length<8 ||length>20) 
+	{
+		alert('Please enter a password length between 8-20');
+		password.focus();
+		return false;
+	}
+	if(!password.value.match(passw))
+	{
+		alert('Please contain at least one numeric digit, one uppercase and one lowercase letter');
+		password.focus();
+		return false;
+	}
+	if(password.value!=rPassword.value)
+	{
+		alert('Enter password are different');
+		password.focus();
+		return false;
+	}
 }
 
 
