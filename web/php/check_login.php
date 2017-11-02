@@ -5,6 +5,7 @@
          window.location.replace("../WEB-INF/index.html");
     }
 </script>
+
 <?php 
         // Start up your PHP Session
         session_start();
@@ -50,15 +51,15 @@
                 setcookie("userID", $userID, $expire);
                 if($_SESSION["LEVEL"] == "admin")
                 {
-                        header("Location: ../WEB-INF/admin-main.html");
+                        header("Location: ../WEB-INF/admin-main.php");
                 }    
                 else if($_SESSION["LEVEL"] == "user")
                 {
-                        header("Location: ../WEB-INF/cust-main.html");
+                        header("Location: ../WEB-INF/cust-main.php");
                 }
                 else if($_SESSION["LEVEL"] == "RentalMaster")
                 {
-                        header("Location:../WEB-INF/rentalMaster-main.html");
+                        header("Location:../WEB-INF/rentalMaster-main.php");
                 }
                 
          }           
