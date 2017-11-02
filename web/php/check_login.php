@@ -1,3 +1,10 @@
+<script>
+    function failed()
+    {
+        alert("Login failed due to incorrect password or email");
+         window.location.replace("../WEB-INF/index.html");
+    }
+</script>
 <?php 
         // Start up your PHP Session
         session_start();
@@ -39,7 +46,7 @@
                 setcookie("userID", $userID, $expire);
                 if($_SESSION["LEVEL"] == "admin")
                 {
-                        header("Location: ../WEB-INF/admin-main.html");
+                        header("Location: ../WEB-INF/admin-main.php");
                 }    
                 else if($_SESSION["LEVEL"] == "user")
                 {
@@ -53,9 +60,10 @@
          }           
         else
         {
-                $_SESSION["Login"] = "NO";
-                echo "<h1>User are not found </h1>";
-                
+            $_SESSION["Login"] = "NO";
+            ?>
+            <script>window.onload=failed()</script>
+            <?php
         }
 ?>
 		 

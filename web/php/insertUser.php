@@ -1,23 +1,14 @@
 <html>
 	<head></head>
 	<body>
-		<script>
-			function repeat()
-			{
-				alert("User Message has used");
-			}
-			function success()
-			{
-				alert("Register Success");
-			}
 		<?php
 		    include ("config.php");
-			$userName = $_POST['username'];
-			$gender = $_POST['gender'];
-			$date = $_POST['gender'];
-			$password = $_POST['password'];
-			$email = $_POST['EMail'];
-			$phone = $_POST['Phone'];
+			$userName = $_POST['EMail_div1'];
+			$gender = $_POST['gender_div1'];
+			$date = $_POST['birthDate_div1'];
+			$password = $_POST['password_div1'];
+			$email = $_POST['EMail_div1'];
+			$phone = $_POST['Phone_div1'];
 			$level = 'user';
 
 			$checkEmail = "select * from user where email='$email'";
@@ -26,25 +17,38 @@
 			if($existsEmail==1 || $existsEmail>1)
 			{
 			    ?>
-			    window.onLoad=repeat;	
+			    <script>
+					function repeat()
+					{
+						alert("User Email has register");
+						 window.location.replace("../WEB-INF/index.html");;
+					}
+					function success()
+					{
+						alert("Register Success");
+					}
+					function failed()
+					{
+						alert("Register Failed");
+					}
+				    window.onLoad=repeat();
+				 </script>	
 				<?php
 			}
-			  	// $sql = "insert into user(username, gender, birthDate,password, email, phone, level) values ('admin','male','123','123456','email','0123456789','admin')" ; 
-			  	// $sql2 = "insert into user(username, gender, birthDate, password, email, phone, level) values ('user1','male','123','123456','email','0123456789','user')" ;
-			    // $result=mysqli_query($conn,$sql) or trigger_error($conn->error."[$sql]");
-			    // $result2=mysqli_query($conn,$sql2) or trigger_error($conn->error."[$sql]");
 			else
 			{
-			    $sql = "insert into user(username, gender,date, password, email, phone, level) values ('$userName','$gender','$date',$password','$email','$phone','$level')" ;
+			    $sql ="Insert into user(username,gender,birthDate,password,email,phone,level) values('$userName','$gender','$date','$password','$email','$phone','$level')";
 			    $result=mysqli_query($conn,$sql) or trigger_error($conn->error."[$sql]");
 			    if($result)
 			    {
-			    	header('Location:..\WEB-INF\LoginSuccess.html');
+			    	?>
+			    	<script>window.onload=success;</script>
+			    	<?php
 			    }
 			    else
 			    {
 			    	?>
-			    	window.onload=success;
+			    	<script>window.onload=failed();</script>
 			    	<?php
 			    }
 			}
