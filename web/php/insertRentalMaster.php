@@ -15,29 +15,29 @@
 			<?php
 				include('config.php');
 				
-				if(isset($_POST['companyName']))
-				{
-					$username = $_POST['companyName'];
-					$establishDate = $_POST['establishDate'];
-					$address1 = $_POST['address1'];
-					$address2 = $_POST['address2'];
-					$postcode = $_POST['postcode'];
-					$country = $_POST['country'];
-					$state = $_POST['state'];
-					$city = $_POST['city'];
-					$cemail = $_POST['CEMail'];
-					$cphone = $_POST['CPhone'];
-					$title=$_POST['title'];
-				    $firstName =$_POST['firstName'];
-				    $lastName = $_POST["lastName"];
-				    $gender =$_POST['gender'];
-				    $position = $_POST['position'];
-				    $email = $_POST['EMail'];
-				    $phone = $_POST['Phone'];
-				    $password = $_POST['password'];
-				}
+				//if(isset($_POST['companyName']))
+				//{
+					$username = $_POST['companyName_div2'];
+					$establishDate = $_POST['establishDate_div2'];
+					$address1 = $_POST['address1_div2'];
+					$address2 = $_POST['address2_div2'];
+					$postcode = $_POST['postcode_div2'];
+					$country = $_POST['country_div2'];
+					$state = $_POST['state_div2'];
+					$city = $_POST['city_div2'];
+					$cemail = $_POST['EMail_div2'];
+					$cphone = $_POST['Phone_div2'];
+					$title=$_POST['title_div2'];
+				    $firstName =$_POST['firstName_div2'];
+				    $lastName = $_POST["lastName_div2"];
+				    $gender =$_POST['gender_div2'];
+				    $position = $_POST['position_div2'];
+				    $email = $_POST['privateEMail_div2'];
+				    $phone = $_POST['privatePhone_div2'];
+				    $password = $_POST['password_div2'];
+				//}
 
-			    $checkEmail = "select * from rentalmaster where cemail='$cemail' or email='$email'";
+			    $checkEmail ="select * from rentalmaster where email='$email' or cemail='$cemail'";
 			    $check = mysqli_query($conn,$checkEmail) or trigger_error($conn->error."[$checkEmail]");
 			    $existsEmail = mysqli_num_rows($check);
 			    if($existsEmail==1 || $existsEmail>1)
