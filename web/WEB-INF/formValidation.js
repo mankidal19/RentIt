@@ -1,28 +1,4 @@
 
-function validateLogin(){
-	var password = document.getElementById("passwordInput");
-	var email = document.getElementById("emailInput");
-	var atpos = email.value.indexOf("@");
-	var dotpos = email.value.lastIndexOf(".");
-	// var userType = document.getElementByName("usertype");
-	// var isChecked = false;
-
-	if (atpos < 1 || ( dotpos - atpos < 2))
-	{
-		alert("Please enter a valid email");
-		email.focus();
-		return false;	
-	}
-	if (password.value==""|| password.length<8 ||length>20) 
-	{
-		alert('Please enter a password length between 8-20');
-		password.focus();
-		return false;
-	}
-	
-	return true;
-}
-
 function validateRegisterRentalMaster()
 {
 	var companyEmail = document.getElementById("EMail_div2");
@@ -64,7 +40,34 @@ function validateRegisterRentalMaster()
 		password.focus();
 		return false;
 	}
-}
+	return true;
+};
+function test()
+{
+	alert("fuck");
+};
+function validateLogin(){
+	var password = document.getElementById("passwordInput");
+	var email = document.getElementById("emailInput");
+	var atpos = email.value.indexOf("@");
+	var dotpos = email.value.lastIndexOf(".");
+	// var userType = document.getElementByName("usertype");
+	// var isChecked = false;
+
+	if (atpos < 1 || ( dotpos - atpos < 2))
+	{
+		alert("Please enter a valid email");
+		email.focus();
+		return false;	
+	}
+	if (password.value==""|| password.length<8 ||length>20) 
+	{
+		alert('Please enter a password length between 8-20');
+		password.focus();
+		return false;
+	}
+	return true;
+};
 
 function validateRegisterUser()
 {
@@ -72,7 +75,7 @@ function validateRegisterUser()
 	var password = document.getElementById("password_div1");
 	var rPassword = document.getElementById("confirm_password_div1");
 	var atpos = email.value.indexOf("@");
-	var dotpos = email.value.lastIndexOf(".");;
+	var dotpos = email.value.lastIndexOf(".");
 	var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;  
 	if (atpos < 1 || ( dotpos - atpos < 2))
 	{
@@ -98,7 +101,8 @@ function validateRegisterUser()
 		password.focus();
 		return false;
 	}
-}
+	return true;
+};
 
 
 //to change form based on dropdown menu
